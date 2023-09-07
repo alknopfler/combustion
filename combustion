@@ -51,14 +51,14 @@ if [ "${1-}" = "--prepare" ]; then
 		rmdir "${config_mount}"
 	done
 
-	if ! [ -d "/sysroot/combustion" ]; then
+	if [ -d "/sysroot/combustion" ]; then
 		if ! cp -R "/sysroot/combustion" "${config_dir}"; then
   				echo "Failed to copy config!"
   				rm -rf "${config_dir}"
   				exit 1
-  	else
-  			echo "No config found on /sysroot."
   	fi
+  else
+  	echo "No config found on /sysroot."
   fi
 
 	if ! [ -d "${config_dir}" ]; then
