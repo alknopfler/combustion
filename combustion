@@ -56,7 +56,6 @@ if [ "${1-}" = "--prepare" ]; then
   				echo "Failed to copy config!"
   				rm -rf "${config_dir}"
   				exit 1
-  			fi
   	else
   			echo "No config found on /sysroot."
   	fi
